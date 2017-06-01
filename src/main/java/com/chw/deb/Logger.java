@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
  */
 @Component
 @Aspect
-public class Logger {
+public class Logger implements PhotoSnapper{
 
     @Pointcut("execution(* com.chw.deb.*.zoom(..))")
     public void lensSnap(){}

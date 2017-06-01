@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
  * Created by papillon on 5/27/2017.
  */
 @Component
-public class Camera {
+public class Camera implements PhotoSnapper{
     public void snap() throws Exception {
         System.out.println("SNAP!");
         throw new Exception("bye bye");
