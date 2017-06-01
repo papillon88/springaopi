@@ -13,5 +13,6 @@ public class Main {
         ApplicationContext context = new FileSystemXmlApplicationContext("bean-config.xml");
         Camera cam = (Camera)context.getBean("camera");
         cam.snap();
+        cam.snap(1000);
     }
 }

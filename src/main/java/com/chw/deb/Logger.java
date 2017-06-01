@@ -13,7 +13,7 @@ import org.springframework.stereotype.Component;
 @Aspect
 public class Logger {
 
-    @Pointcut("execution(void com.chw.deb.Camera.snap())")
+    @Pointcut("execution(void com.chw.deb.Camera.snap(..))")
     public void cameraSnap(){}
 
     @Before("cameraSnap()")
