@@ -1,5 +1,6 @@
 package com.chw.deb;
 
+import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.*;
 import org.springframework.stereotype.Component;
 
@@ -39,6 +40,19 @@ public class Logger {
     @AfterReturning("cameraSnap()")
     public void afterTakingPhotoReturning(){
         System.out.println("photo taken....returning");
+    }
+
+    @Around("cameraSnap()")
+    public void afterTakingPhotoAround(ProceedingJoinPoint p){
+        System.out.println("photo taken....around.....before");
+
+        try {
+            p.proceed();
+        } catch (Throwable throwable) {
+            System.out.println("photo taken....around.....before...exception occured "+throwable.getMessage());
+        }
+
+        System.out.println("photo taken....around.....before");
     }
 
 
