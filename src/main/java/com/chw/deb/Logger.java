@@ -27,7 +27,9 @@ public class Logger {
     }
 
     @Pointcut("execution(String com.chw.deb.Camera.snap(String))")
+    //examples of wildcard expressions
     //@Pointcut("execution(* com.chw.deb.Camera.snap(String))")
+    //@Pointcut("execution(* com.chw.deb.Camera.*(...))")
     public void cameraSnapName(){}
 
     @Before("cameraSnapName()")
