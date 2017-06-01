@@ -13,7 +13,11 @@ public class Main {
         ApplicationContext context = new FileSystemXmlApplicationContext("bean-config.xml");
         Camera cam = (Camera)context.getBean("camera");
         Lens lens = (Lens)context.getBean("lens");
-        cam.snap();
+        try {
+            cam.snap();
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
         cam.snap(1000);
         cam.snap("another photo");
         lens.zoom(4);

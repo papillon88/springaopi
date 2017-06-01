@@ -1,9 +1,6 @@
 package com.chw.deb;
 
-import org.aspectj.lang.annotation.After;
-import org.aspectj.lang.annotation.Aspect;
-import org.aspectj.lang.annotation.Before;
-import org.aspectj.lang.annotation.Pointcut;
+import org.aspectj.lang.annotation.*;
 import org.springframework.stereotype.Component;
 
 /**
@@ -26,13 +23,22 @@ public class Logger {
         System.out.println("photo taken LENS....");
     }
 
-    @Pointcut("execution(void com.chw.deb.Camera.snap(..))")
+    @Pointcut("execution(void com.chw.deb.Camera.snap())")
     public void cameraSnap(){}
 
     @Before("cameraSnap()")
     public void aboutToTakePhoto(){
         System.out.println("about to take photo....");
     }
+
+
+
+    @AfterReturning("cameraSnap()")
+    public void afterTakingPhotoReturning(){
+        System.out.println("photo taken....returning");
+    }
+
+
 
     @After("cameraSnap()")
     public void afterTakingPhoto(){
