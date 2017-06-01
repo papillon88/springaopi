@@ -31,7 +31,10 @@ public class Logger {
         System.out.println("about to take photo....");
     }
 
-
+    @AfterThrowing("cameraSnap()")
+    public void afterTakingPhotoThrowing(){
+        System.out.println("photo taken....throwing");
+    }
 
     @AfterReturning("cameraSnap()")
     public void afterTakingPhotoReturning(){
