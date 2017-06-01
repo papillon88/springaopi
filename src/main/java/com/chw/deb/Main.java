@@ -14,5 +14,6 @@ public class Main {
         Camera cam = (Camera)context.getBean("camera");
         cam.snap();
         cam.snap(1000);
+        cam.snap("another photo");
     }
 }

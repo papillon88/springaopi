@@ -25,4 +25,18 @@ public class Logger {
     public void afterTakingPhoto(){
         System.out.println("photo taken....");
     }
+
+    @Pointcut("execution(String com.chw.deb.Camera.snap(String))")
+    //@Pointcut("execution(* com.chw.deb.Camera.snap(String))")
+    public void cameraSnapName(){}
+
+    @Before("cameraSnapName()")
+    public void aboutToTakePhotoName(){
+        System.out.println("about to take photo with name....");
+    }
+
+    @After("cameraSnapName()")
+    public void afterTakingPhotoName(){
+        System.out.println("photo taken with name....");
+    }
 }
