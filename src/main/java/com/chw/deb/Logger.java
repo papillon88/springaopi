@@ -11,18 +11,23 @@ import org.springframework.stereotype.Component;
 @Aspect
 public class Logger implements PhotoSnapper{
 
-
+    //within runs method of any class in a given package
     @Pointcut("within(com.chw.deb.Camera)")
-    public void cameraSnap(){}
+    public void withinDemo(){}
 
-    @Before("cameraSnap()")
-    public void aboutToTakePhoto(){
-        System.out.println("about to take photo....");
+    //
+    @Pointcut("target(com.chw.deb.PhotoSnapper)")
+    public void targetDemo(){}
+
+    @Before("withinDemo()")
+    public void withinDemoAdvice(){
+        System.out.println("within demo before....");
     }
 
-
-
-
+    @Before("targetDemo()")
+    public void targetDemoAdvice(){
+        System.out.println("target demo before....");
+    }
 
 
     /*@Pointcut("execution(void com.chw.deb.Camera.snap())")
