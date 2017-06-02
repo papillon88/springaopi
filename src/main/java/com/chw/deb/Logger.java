@@ -11,20 +11,21 @@ import org.springframework.stereotype.Component;
 @Aspect
 public class Logger implements PhotoSnapper{
 
-    @Pointcut("execution(* com.chw.deb.*.zoom(..))")
-    public void lensSnap(){}
 
-    @Before("lensSnap()")
-    public void aboutToTakePhotoLens(){
-        System.out.println("about to take photo LENS....");
+    @Pointcut("within(com.chw.deb.Camera)")
+    public void cameraSnap(){}
+
+    @Before("cameraSnap()")
+    public void aboutToTakePhoto(){
+        System.out.println("about to take photo....");
     }
 
-    @After("lensSnap()")
-    public void afterTakingPhotoLens(){
-        System.out.println("photo taken LENS....");
-    }
 
-    @Pointcut("execution(void com.chw.deb.Camera.snap())")
+
+
+
+
+    /*@Pointcut("execution(void com.chw.deb.Camera.snap())")
     public void cameraSnap(){}
 
     @Before("cameraSnap()")
@@ -56,7 +57,6 @@ public class Logger implements PhotoSnapper{
     }
 
 
-
     @After("cameraSnap()")
     public void afterTakingPhoto(){
         System.out.println("photo taken....");
@@ -77,4 +77,17 @@ public class Logger implements PhotoSnapper{
     public void afterTakingPhotoName(){
         System.out.println("photo taken with name....");
     }
+
+    @Pointcut("execution(* com.chw.deb.*.zoom(..))")
+    public void lensSnap(){}
+
+    @Before("lensSnap()")
+    public void aboutToTakePhotoLens(){
+        System.out.println("about to take photo LENS....");
+    }
+
+    @After("lensSnap()")
+    public void afterTakingPhotoLens(){
+        System.out.println("photo taken LENS....");
+    }*/
 }
