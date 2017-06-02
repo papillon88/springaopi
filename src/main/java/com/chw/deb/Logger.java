@@ -15,7 +15,7 @@ public class Logger implements PhotoSnapper{
     @Pointcut("within(com.chw.deb.Camera)")
     public void withinDemo(){}
 
-    //
+
     @Pointcut("target(com.chw.deb.PhotoSnapper)")
     public void targetDemo(){}
 
