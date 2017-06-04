@@ -29,6 +29,14 @@ public class Logger implements PhotoSnapper{
         System.out.println("target demo before....");
     }
 
+    @Pointcut("execution(double com.chw.deb.Camera.autofocus())")
+    public void pointCutForAutofocus(){}
+
+    @Before("pointCutForAutofocus()")
+    public void adviceAutoFocus(){
+        System.out.println("before auto focussing.....");
+    }
+
 
     /*@Pointcut("execution(void com.chw.deb.Camera.snap())")
     public void cameraSnap(){}

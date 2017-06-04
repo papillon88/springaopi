@@ -23,6 +23,7 @@ public class Main {
             System.out.println(e.getMessage());
         }
         cam.snap(1000);
+        cam.autofocus(1000.00);
         cam.snap("another photo");
         lens.zoom(4);
     }
