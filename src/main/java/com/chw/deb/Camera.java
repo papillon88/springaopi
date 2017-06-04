@@ -18,4 +18,9 @@ public class Camera implements PhotoSnapper{
         System.out.println("SNAP with name "+ name);
         return name;
     }
+
+    public double autofocus(double value){
+        System.out.println("SNAP with name "+ value);
+        return value;
+    }
 }
