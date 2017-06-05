@@ -34,7 +34,7 @@ public class Logger implements PhotoSnapper{
 
     @Before("pointCutForAutofocus()")
     public void adviceAutoFocus(){
-        System.out.println("before auto focussing.....");
+        System.out.println("before auto focussing........");
     }
 
 
