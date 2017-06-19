@@ -5,4 +5,5 @@ package com.chw.deb;
  */
 public interface PhotoSnapper {
     void snapShot();
+    void controlExposure();
 }
