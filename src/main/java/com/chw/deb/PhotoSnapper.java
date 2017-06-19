@@ -7,4 +7,5 @@ public interface PhotoSnapper {
     void snapShot();
     void controlExposure();
     void whiteBalance();
+    void colorBalance();
 }
