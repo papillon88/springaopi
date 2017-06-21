@@ -9,4 +9,6 @@ public interface PhotoSnapper {
     void whiteBalance();
     void colorBalance();
     void contrast();
+    void brightness();
+
 }
